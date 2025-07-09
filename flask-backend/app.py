@@ -11,9 +11,9 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app)
 
-# ✅ Connect to MongoDB
+#  Connect to MongoDB
 client = MongoClient(os.getenv("MONGO_URI"))
-db = client["webhookdb"]  # ✅ use lowercase to match existing DB
+db = client["webhookdb"]  # use lowercase to match existing DB
 events_collection = db["events"]
 
 @app.route("/webhook", methods=["POST"])
